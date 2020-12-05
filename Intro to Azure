@@ -1,0 +1,15 @@
+az vm create \
+   --resource-group "resource-group-west" \
+   --name "linux-vm-west" \
+   --location "westus2" \
+   --image "UbuntuLTS" \
+   --size "Standard_B1ls" \
+   --admin-username "udacityadmin" \
+   --generate-ssh-keys \
+   --verbose
+
+
+   az vm open-port \
+    --port "80" \
+    --resource-group "resource-group-west" \
+    --name "linux-vm-west"
